@@ -49,21 +49,21 @@ int main(int argc, string argv[])
         int letter = text[i]; 
         int cipher = letter + key;
         
-        if (islower(letter))
+        if (islower(letter)) //in the case of lower letters
         {
-            if (cipher <= 'z')
+            if (cipher <= 'z') // if ciphered letter doesn't exceed 'z' print that
             {
                 printf("%c", cipher);
             }
             
-            else
+            else // if ciphered letter exceeds 'z' go back to 'a,' then add the rest of the distance that needs to be shifted
             {                            
                 cipher = (cipher % 'z') + ('a' - 1); 
                 printf("%c", cipher);
             }
         }
         
-        else if (isupper(letter))
+        else if (isupper(letter)) // in the case of upper letters
         {
             if (cipher <= 'Z')
             {
@@ -77,7 +77,7 @@ int main(int argc, string argv[])
             }
         }
         
-        else
+        else // in the case of spaces or the symbols other than alphabetic letters, print as it is.
         {
             printf("%c", letter);
         }
